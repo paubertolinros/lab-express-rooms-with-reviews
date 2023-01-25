@@ -1,0 +1,21 @@
+<h2> All Rooms </h2>
+<p>{{user.fullName}} these are all rooms</p>
+{{#if allRooms}}
+<div>
+  {{#each allRooms}}
+  <div>
+    <img src={{this.imageUrl}} alt={{this.name}}>
+    <h3> {{this.name}} </h3>
+    <p> Description: {{this.description}} </p>
+    <p> Owner: {{this.owner.fullName}}</p>
+  </div>
+  <div>
+    <a href="rooms/edit/{{this._id}}">Edit room</a>
+    <a href="rooms/delete/{{this._id}}">Delete room</a>
+    {{#if error}}
+    <p class="error" style="color:red">{{error}}</p>
+    {{/if}}
+  </div>
+  {{/each}}
+</div>
+{{/if}}

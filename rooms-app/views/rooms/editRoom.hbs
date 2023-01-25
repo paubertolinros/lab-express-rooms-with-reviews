@@ -1,0 +1,15 @@
+<div id="form">
+  <h2>{{user.fullName}} you can edit new room</h2>
+  <form method="POST" action="/rooms/edit/{{room._id}}">
+    <label> Name </label>
+    <input type="text" name="name" value="{{room.name}}" required>
+    <label>Description</label>
+    <input type="text" name="description" value="{{room.description}}" required>
+    <label>Image url</label>
+    <input type="text" name="imageUrl" value="{{room.imageUrl}}" required>
+    <button type="submit">Edit</button>
+    {{#if error}}
+    <p class="error" style="color:red">{{error}}</p>
+    {{/if}}
+  </form>
+</div>

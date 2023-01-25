@@ -1,0 +1,16 @@
+<div id="form">
+  <h2>{{user.fullName}} you can create new room</h2>
+  <form method="POST" action="/rooms/create">
+    <label> Name </label>
+    <input type="text" name="name" placeholder="setembre" required>
+    <label>Description</label>
+    <input type="text" name="description" placeholder="Big area..." required>
+    <label>Image url</label>
+    <input type="text" name="imageUrl" placeholder="https://..." required>
+    <button type="submit">Create</button>
+    <p>Not registered yet?<a href="/auth/signup">Sign up here!</a></p>
+    {{#if error}}
+    <p class="error" style="color:red">{{error}}</p>
+    {{/if}}
+  </form>
+</div>
