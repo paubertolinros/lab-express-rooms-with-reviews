@@ -10,6 +10,23 @@
     <p> Owner: {{this.owner.fullName}}</p>
   </div>
   <div>
+    <h3> {{../user.fullName}} write a review! </h3>
+    <h3></h3>
+    {{#each reviews}}
+    <p>{{user}} : {{this.comment}}</p>
+    {{/each }}
+  </div>
+  <div>
+    <form method="POST" action="/rooms/review/{{this._id}}">
+      <label> Comment </label>
+      <input type="text" name="comment" placeholder="Is very nice..." required>
+      <button type="submit">Send</button>
+      {{#if error}}
+      <p class="error" style="color:red">{{error}}</p>
+      {{/if}}
+    </form>
+  </div>
+  <div>
     <a href="rooms/edit/{{this._id}}">Edit room</a>
     <a href="rooms/delete/{{this._id}}">Delete room</a>
     {{#if error}}

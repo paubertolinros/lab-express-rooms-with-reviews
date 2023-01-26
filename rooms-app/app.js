@@ -43,7 +43,7 @@ app.use(
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       secure: process.env.NODE_ENV === 'production',
       httpOnly: true,
-      maxAge: 240000 // 3 minute in milliseconds
+      maxAge: 1240000 // 3 minute in milliseconds
     },
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URL
